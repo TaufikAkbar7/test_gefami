@@ -51,6 +51,12 @@ react {
     // hermesFlags = ["-O", "-output-source-map"]
 }
 
+project.ext.vectoricons = [
+    iconFontNames: ['Ionicons.ttf', 'AntDesign.ttf', 'Entypo.ttf', 'EvilIcons.tff', 'Feather.ttf', 'FontAwesome.ttf', 'FontAwesome5_Brands.ttf', 'FontAwesome5_Regular.ttf', 'FontAwesome5_Solid.ttf', 'Fontisto.ttf', 'Foundation.ttf', 'MaterialCommunityIcons.ttf', 'MaterialIcons.ttf', 'Octicons.ttf', 'Zocial.ttf', 'SimpleLineIcons.ttf'] // Name of the font files you want to copy
+]
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
+
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
@@ -113,6 +119,7 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    implementation project(':react-native-vector-icons')
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
